@@ -24926,7 +24926,7 @@
 	      if (isLoading) {
 	        return React.createElement(
 	          'h3',
-	          null,
+	          { className: 'text-center' },
 	          'Fetching weather...'
 	        );
 	      } else if (temp && location) {
@@ -24938,9 +24938,9 @@
 	      'div',
 	      null,
 	      React.createElement(
-	        'h3',
-	        null,
-	        'Weather Component'
+	        'h1',
+	        { className: 'text-center' },
+	        'Get Weather'
 	      ),
 	      React.createElement(WeatherForm, { onSearch: this.handleSearch }),
 	      renderMessage()
@@ -24981,7 +24981,7 @@
 	        React.createElement('input', { type: 'text', ref: 'location' }),
 	        React.createElement(
 	          'button',
-	          null,
+	          { className: 'button expanded hollow' },
 	          'Get Weather'
 	        )
 	      )
@@ -24995,30 +24995,24 @@
 /* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	var React = __webpack_require__(8);
 
-	var WeatherMessage = React.createClass({
-	  displayName: 'WeatherMessage',
+	var WeatherMessage = function WeatherMessage(_ref) {
+	  var temp = _ref.temp;
+	  var location = _ref.location;
 
-	  render: function render() {
-	    var _props = this.props;
-	    var temp = _props.temp;
-	    var location = _props.location;
-
-
-	    return React.createElement(
-	      'h3',
-	      null,
-	      'It is ',
-	      temp,
-	      ' in ',
-	      location,
-	      '.'
-	    );
-	  }
-	});
+	  return React.createElement(
+	    "h3",
+	    { className: "text-center" },
+	    "It is ",
+	    temp,
+	    " in ",
+	    location,
+	    "."
+	  );
+	};
 
 	module.exports = WeatherMessage;
 
@@ -26227,30 +26221,55 @@
 /* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	var React = __webpack_require__(8);
 
-	var About = React.createClass({
-	  displayName: 'About',
-
-	  render: function render() {
-	    return React.createElement(
-	      'div',
+	var About = function About(props) {
+	  return React.createElement(
+	    "div",
+	    null,
+	    React.createElement(
+	      "h1",
+	      { className: "text-center" },
+	      "About"
+	    ),
+	    React.createElement(
+	      "p",
+	      null,
+	      "This is a weather application build on React. I have built this for The Complete React Web App Developer Course."
+	    ),
+	    React.createElement(
+	      "p",
+	      null,
+	      "Here are some of the tools I used:"
+	    ),
+	    React.createElement(
+	      "ul",
 	      null,
 	      React.createElement(
-	        'h3',
+	        "li",
 	        null,
-	        'About Component'
+	        React.createElement(
+	          "a",
+	          { href: "https://facebook.github.io/react" },
+	          "React"
+	        ),
+	        " - This was the JavaScript framework used."
 	      ),
 	      React.createElement(
-	        'p',
+	        "li",
 	        null,
-	        'Welcome to about'
+	        React.createElement(
+	          "a",
+	          { href: "http://openweathermap.org" },
+	          "Open Weather Map"
+	        ),
+	        " I used Open Weather Map to search for weather data by city name."
 	      )
-	    );
-	  }
-	});
+	    )
+	  );
+	};
 
 	module.exports = About;
 
